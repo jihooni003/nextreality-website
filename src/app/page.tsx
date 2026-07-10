@@ -140,11 +140,16 @@ export default function Home() {
                 AI · XR · Web · App Studio
               </div>
               <h1 className="max-w-3xl text-5xl font-black leading-[1.08] tracking-normal text-slate-950 md:text-7xl">
-                AI와 XR로 아이디어를 현실로 만듭니다.
+                <span className="inline-block whitespace-nowrap">AI와 XR로</span>{" "}
+                <span className="inline-block whitespace-nowrap">아이디어를</span>{" "}
+                <span className="inline-block whitespace-nowrap">현실로</span>{" "}
+                <span className="inline-block whitespace-nowrap">만듭니다.</span>
               </h1>
               <p className="mt-7 max-w-2xl text-lg font-medium leading-8 text-slate-600 md:text-xl">
-                넥스트리얼리티는 AI와 XR 기술을 기반으로 웹·앱 개발부터 AI 에이전트,
-                실감형 콘텐츠까지 기업의 디지털 혁신을 함께 만드는 기술 파트너입니다.
+                넥스트리얼리티는 AI와 XR 기술을 기반으로 웹·앱 개발부터{" "}
+                <span className="whitespace-nowrap">AI 에이전트</span>,{" "}
+                <span className="whitespace-nowrap">실감형 콘텐츠까지</span> 기업의 디지털 혁신을 함께
+                만드는 기술 파트너입니다.
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <a
