@@ -33,6 +33,15 @@ body {
   color: var(--foreground);
   font-family: Pretendard, Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-wrap: pretty;
 }
 
 button,
