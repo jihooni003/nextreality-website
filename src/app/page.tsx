@@ -334,10 +334,6 @@ export default function Home() {
                 </a>
                 <div className="flex items-center gap-3">
                   <CheckCircle2 size={18} />
-                  010-칠구칠구-칠구육칠
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 size={18} />
                   울산 남구
                 </div>
               </div>
