@@ -5,10 +5,10 @@ import { CheckCircle2, Send } from "lucide-react";
 import { MotionReveal } from "@/components/motion-reveal";
 
 const endpoint =
-  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? "https://formspree.io/f/your-form-id";
+  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? "https://formspree.io/f/mdarqzqz";
 
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "unconfigured">("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -22,9 +22,7 @@ export function ContactForm() {
     setStatus("sending");
 
     if (endpoint.includes("your-form-id")) {
-      await new Promise((resolve) => setTimeout(resolve, 500));
-      form.reset();
-      setStatus("success");
+      setStatus("unconfigured");
       return;
     }
 
@@ -136,6 +134,11 @@ export function ContactForm() {
         {status === "error" ? (
           <p className="rounded-[8px] border border-rose-300/30 bg-rose-400/10 px-4 py-3 text-sm font-semibold text-rose-100">
             전송 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.
+          </p>
+        ) : null}
+        {status === "unconfigured" ? (
+          <p className="rounded-[8px] border border-amber-300/30 bg-amber-400/10 px-4 py-3 text-sm font-semibold text-amber-100">
+            문의 전송 설정이 아직 연결되지 않았습니다. Formspree 엔드포인트를 설정해주세요.
           </p>
         ) : null}
       </form>
